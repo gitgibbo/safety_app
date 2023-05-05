@@ -29,7 +29,7 @@ def create_LMRA(request):
     
     context = {'lmra_form': lmra_form, 'hazard_formset': hazard_formset}
     return render(request, 'LMRA/create_LMRA.html', context)
-
+@login_required
 def homepage(request):
     return render(request, 'LMRA/home.html')
 
