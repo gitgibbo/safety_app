@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 from .models import LMRA, Hazard
 from .forms import LMRAForm, HazardFormSet
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 #LMRA Creation
+@login_required
 def create_LMRA(request):
     """Create LMRA with linked hazar forms"""
     if request.method == 'POST':
@@ -34,12 +36,14 @@ def homepage(request):
 
 
 #View to see LMRA's
+@login_required
 def lmras(request):
     """Shows all LMRA's"""
     lmras = LMRA.objects.order_by('date_added')
     context = {'lmras': lmras }
     return render(request, 'LMRA/lmras.html', context)
 
+@login_required
 class lmra(DetailView):
     """Show single LMRA"""
     model = LMRA
