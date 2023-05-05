@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 from .models import LMRA, Hazard
 from .forms import LMRAForm, HazardFormSet
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
