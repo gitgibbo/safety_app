@@ -1,0 +1,69 @@
+{% extends "LMRA/base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Create LMRA</h1>
+            <hr>
+            <form method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form lmra_form %}
+                <div id="hazards">
+                    {{ hazard_formset.management_form }}
+                    {% for hazard_form in hazard_formset %}
+                        <div class="hazard-form mb-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Hazard {{ forloop.counter }}</h5>
+                                </div>
+                                <div class="card-body">
+                                    {% bootstrap_form hazard_form %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="form-group">
+                    <button id="add-hazard" type="button" class="btn btn-primary">Add Hazard</button>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    console.log("JavaScript code is running!");
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const addHazardButton = document.getElementById('add-hazard');
+        const hazardsDiv = document.getElementById('hazards');
+        const formCountInput = document.querySelector('#id_hazard_set-TOTAL_FORMS');
+        const initialFormCount = document.querySelectorAll('.hazard-form').length;
+        formCountInput.value = initialFormCount;
+
+        addHazardButton.addEventListener('click', (event) => {
+            const emptyForm = `{% bootstrap_form hazard_formset.empty_form %}`;
+            const newForm = `
+                <div class="hazard-form mb-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Hazard ${document.querySelectorAll('.hazard-form').length + 1}</h5>
+                        </div>
+                        <div class="card-body">
+                            ${emptyForm.replace(/__prefix__/g, document.querySelectorAll('.hazard-form').length)}
+                        </div>
+                    </div>
+                </div>
+            `;
+            const formCount = document.querySelectorAll('.hazard-form').length;
+            hazardsDiv.insertAdjacentHTML('beforeend', newForm);
+            formCountInput.value = formCount + 1;
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "LMRA/base.html" %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">Work Safe.</h1>
+        <p class="lead">
+            A one stop shop to submit Risk Assessments, report unsafe conditions and near misses, and more!
+        </p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}

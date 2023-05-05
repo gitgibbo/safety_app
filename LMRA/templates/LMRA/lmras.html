@@ -1,0 +1,23 @@
+{% extends "LMRA/base.html" %}
+
+{% block page_header %}
+    <h1>LMRA's</h1>
+{% endblock page_header %}
+
+{% block content %}
+    <ul>
+        {% for lmra in lmras %}
+            <div class="card mb-3">
+                <h4 class="card-header">
+                    <a href="{% url 'LMRA:lmra' lmra.id %}">{{ lmra }}</a>
+                </h4>
+                <div class="card-body">
+                    {{ lmra.date_added }}
+                </div>
+            </div>
+        {% empty %}
+            <li>No LMRA's have been submitted yet.</li>
+        {% endfor %}
+    </ul>
+
+    {% endblock content %}

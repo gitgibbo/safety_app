@@ -1,0 +1,11 @@
+{% extends "LMRA/base.html" %}
+
+{% block content %}
+
+<h1>{{ object.location }}</h1>
+<h3>{{ object.date_added }}</h3>
+    {% for hazard in hazards %}
+        <li>{{ hazard.hazard }}</li>
+    {% endfor %}
+
+{% endblock content %}
