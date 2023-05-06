@@ -6,7 +6,12 @@
         <p class="lead">
             A one stop shop to submit Risk Assessments, report unsafe conditions and near misses, and more!
         </p>
-        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
-        role="button">Register &raquo;</a>
+        {% if user.is_authenticated %}
+            <a class="btn btn-lg btn-primary" href="{% url 'LMRA:create' %}"
+            role="button">Create LMRA &raquo;</a>
+        {% else %}
+            <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+            role="button">Register &raquo;</a>
+        {% endif %}
     </div>
 {% endblock page_header %}
