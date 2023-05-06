@@ -15,7 +15,7 @@ def report_unsafe_condition(request):
             unsafe_condition = form.save(commit=False)
             unsafe_condition.save()
             form.save_m2m()
-            return redirect('unsafe_condition:success')
+            return redirect('home')
     else:
         form = UnsafeConditionForm()
 
@@ -24,4 +24,4 @@ def report_unsafe_condition(request):
 
 def unsafe_condition_success(request):
     """View for displaying the success message after reporting an unsafe condition."""
-    return render(request, 'unsafe_condition/unsafe_condition_success.html')
+    return render(request, 'LMRA:home')

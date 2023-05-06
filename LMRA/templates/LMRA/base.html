@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
         shrink-to-fit=no">
-    <title>Safety App</title>
+    <title>JDEsa</title>
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     {% load static %}
@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
-        <a class="navbar-brand" href="">Safety App</a>
+        <a class="navbar-brand" href="{% url 'home' %}">JDEsa</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -23,15 +23,15 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="{% url 'home'%}"> Home</a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'LMRA:create'%}">Create LMRA</a>
                 </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="{% url 'LMRA:lmras'%}">LMRA's</a>
-                </li>
+                </li> {% endcomment %}
             </ul>
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
