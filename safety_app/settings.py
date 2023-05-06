@@ -31,8 +31,11 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jdesa.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
+    'unsafe_condition',
     'LMRA',
     'users',
+    'PIL',
+    'django_cleanup.apps.CleanupConfig',
 
     #Third party
     'bootstrap4',
@@ -69,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
@@ -135,3 +139,8 @@ LOGIN_URL = 'users:login'
 # Heroku Settings
 import django_heroku
 django_heroku.settings(locals())
+
+import os
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL ='/media/'
