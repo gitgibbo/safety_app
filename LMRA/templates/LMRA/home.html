@@ -9,9 +9,12 @@
         {% if user.is_authenticated %}
             <a class="btn btn-lg btn-primary" href="{% url 'LMRA:create' %}"
             role="button">Create LMRA &raquo;</a>
+            <a class="btn btn-lg btn-danger" href=""
+            role="button">Report Unsafe Condition &raquo;</a>
         {% else %}
             <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
             role="button">Register &raquo;</a>
+
         {% endif %}
     </div>
 {% endblock page_header %}
