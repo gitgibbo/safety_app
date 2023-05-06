@@ -1,0 +1,38 @@
+body {
+    background-color: #fcf9f4;
+}
+
+.bg-light {
+    background-color: #f7eedc!important;
+}
+
+.jumbotron {
+    background-color: #d3ba91;
+}
+
+.btn-primary {
+    background-color: #8c7454;
+    border-color: #8c7474;
+}
+
+.btn-primary:hover {
+    background-color: #3f3a31;
+    border-color: #3f3a31;
+}
+
+.btn-success {
+    background-color: #849fa4;
+    border-color: #849fa4;
+}
+
+.btn-success:hover {
+    background-color: #7b9ba1;
+    border-color: #7b9ba1;
+}
+
+.logo-img {
+    display: block;
+    margin: auto;
+    max-height: 50%;
+    max-width: 50%;
+  }
