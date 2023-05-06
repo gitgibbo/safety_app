@@ -9,7 +9,7 @@
         {% if user.is_authenticated %}
             <a class="btn btn-lg btn-primary" href="{% url 'LMRA:create' %}"
             role="button">Create LMRA &raquo;</a>
-            <a class="btn btn-lg btn-danger" href=""
+            <a class="btn btn-lg btn-danger" href="{% url 'unsafe_condition:create' %}"
             role="button">Report Unsafe Condition &raquo;</a>
         {% else %}
             <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
