@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 #LMRA Creation
+@login_required
 def create_LMRA(request):
     """Create LMRA with linked hazar forms"""
     if request.method == 'POST':
