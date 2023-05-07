@@ -19,3 +19,5 @@ class LMRAAdmin(admin.ModelAdmin):
         css = {'all': ('admin/css/widgets.css',)}
         js = ('admin/js/core.js', 'admin/js/RelatedObjectLookup.js', 'admin/js/vendor/jquery/jquery.js', 'admin/js/jquery.init.js')
  """
+
+admin.site.site_header = 'JDEsa Admin Portal'

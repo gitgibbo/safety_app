@@ -10,7 +10,7 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
-        <button type="submit" class="btn btn-success">Report</button>
+        <button type="submit" class="btn btn-success" disabled >Submit /* feature currently disabled */</button>
         {% endbuttons %}
     </form>
 {% endblock content%}

@@ -2,9 +2,9 @@
 {% load static %}
 {% block page_header %}
     <div class="jumbotron">
-        <h1 class="display-3">Work Safe.</h1>
+        <h1 class="display-3">Work safe, or don't work at all.</h1>
         <p class="lead">
-            A one stop shop to submit Risk Assessments, report unsafe conditions and near misses, and more!
+            A portal for the submission of LMRA's and Unsafe conditions.
         </p>
         {% if user.is_authenticated %}
             <a class="btn btn-lg btn-primary" href="{% url 'LMRA:create' %}"
